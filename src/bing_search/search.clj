@@ -25,23 +25,20 @@
 
 (defn parse-body [resp]
   (let [type ((resp :headers) "Content-Type")
-        r-json (when (re-find #"/json" type)
+        r-json (when (re-find #"json" type)
                 (((json/read-str (resp :body)) "d") "results"))
         r-xml (when (re-find #"xml" type)
-                (xml/parse-str (resp :body)))
-        result (or r-json r-xml)]
-    (if-not result (resp :body) result)))
+                (xml/parse-str (resp :body)))]
+        (or r-json r-xml)))
 
 (defn search
   "https request to bing api, returns {:result <parsed body> :response <http response map>}"
-  ([if term] (search if term {}))
-  ([if term opts]
+  ([inf term] (search inf term {}))
+  ([inf term opts]
    (let [params (parse-opts opts)
-         if (clojure.string/capitalize (name if))
-         url (str "https://api.datamarket.azure.com/Bing/Search/" if "?Query=" (encode-quotes term) params)
+         inf (clojure.string/capitalize (name inf))
+         url (str "https://api.datamarket.azure.com/Bing/Search/" inf "?Query=" (encode-quotes term) params)
          resp (http/get url
                {:digest-auth ["", bing-key]
                 :throw-exceptions false})]
-     (if-not (= 200 (resp :status))
-       (throw (ex-info "Error" resp))
-       {:result (parse-body resp) :response resp}))))
+       {:result (parse-body resp) :response resp})))
