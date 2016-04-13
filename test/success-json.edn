@@ -1,0 +1,18 @@
+{:request-time 1372, :repeatable? false, :streaming?
+   true, :chunked? false, :headers {"Access-Control-Expose-Headers"
+   "DataServiceVersion, MaxDataServiceVersion", "Access-Control-Max-Age"
+   "604800", "Access-Control-Allow-Headers" "Content-Type, Authorization,
+   DataServiceVersion, MaxDataServiceVersion", "Server" "Microsoft-IIS/8.0",
+   "Content-Type"
+   "application/json; charset=utf-8", "Access-Control-Allow-Origin" "*",
+   "X-Content-Type-Options" "nosniff", "Connection" "close", "X-AspNet-Version"
+   "4.0.30319", "Access-Control-Allow-Methods" "GET, POST, PUT, DELETE,
+   OPTIONS", "Date" "Wed, 13 Apr 2016 14:13:55 GMT", "Vary" "Accept-Encoding",
+   "Access-Control-Allow-Credentials" "false", "X-Powered-By" "ASP.NET",
+   "Cache-Control" "private"}, :orig-content-encoding nil, :status 200, :length
+   -1, :body
+   "{\"d\":{\"results\":[{\"__metadata\":{\"uri\":\"https://api.datamarket.azure.com/Data.ashx/Bing/Search/Image?Query=\\u0027kittens\\u0027&$skip=0&$top=1\",\"type\":\"ImageResult\"},\"ID\":\"2882c46e-d1d6-475f-804a-1117a41e3124\",\"Title\":\"Cute
+   Kittens - Pictures - The Wondrous
+   Pics\",\"MediaUrl\":\"http://wondrouspics.com/wp-content/uploads/2011/12/Cute_kitten.jpg\",\"SourceUrl\":\"http://wondrouspics.com/cute-kittens-pictures/\",\"DisplayUrl\":\"wondrouspics.com/cute-kittens-pictures\",\"Width\":\"1280\",\"Height\":\"1024\",\"FileSize\":\"203635\",\"ContentType\":\"image/jpeg\",\"Thumbnail\":{\"__metadata\":{\"type\":\"Bing.Thumbnail\"},\"MediaUrl\":\"http://ts2.mm.bing.net/th?id=OIP.M9a8352a53a10bdac9dbaca3458e71816H0&pid=15.1\",\"ContentType\":\"image/jpg\",\"Width\":\"480\",\"Height\":\"384\",\"FileSize\":\"15924\"}}],\"__next\":\"https://api.datamarket.azure.com/Data.ashx/Bing/Search/Image?Query=\\u0027kittens\\u0027&$skip=1&$top=1\"}}",
+   :trace-redirects
+   ["https://api.datamarket.azure.com/Bing/Search/Image?Query=%27kittens%27&$top=1&$format=json"]}

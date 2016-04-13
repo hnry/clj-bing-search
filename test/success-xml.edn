@@ -1,0 +1,42 @@
+{:request-time 1413, :repeatable? false, :streaming?
+   true, :chunked? false, :headers {"Access-Control-Expose-Headers"
+   "DataServiceVersion, MaxDataServiceVersion", "Access-Control-Max-Age"
+   "604800", "Access-Control-Allow-Headers" "Content-Type, Authorization,
+   DataServiceVersion, MaxDataServiceVersion", "Server" "Microsoft-IIS/8.0",
+   "Content-Type"
+   "application/atom+xml; charset=utf-8", "Access-Control-Allow-Origin" "*",
+   "X-Content-Type-Options" "nosniff", "Connection" "close", "X-AspNet-Version"
+   "4.0.30319", "Access-Control-Allow-Methods" "GET, POST, PUT, DELETE,
+   OPTIONS", "Date" "Wed, 13 Apr 2016 13:57:25 GMT", "Vary" "Accept-Encoding",
+   "Access-Control-Allow-Credentials" "false", "X-Powered-By" "ASP.NET",
+   "Cache-Control" "private"}, :orig-content-encoding nil, :status 200, :length
+   -1, :body "<feed
+   xmlns:base=\"https://api.datamarket.azure.com/Data.ashx/Bing/Search/Image\"
+   xmlns:d=\"http://schemas.microsoft.com/ado/2007/08/dataservices\"
+   xmlns:m=\"http://schemas.microsoft.com/ado/2007/08/dataservices/metadata\"
+   xmlns=\"http://www.w3.org/2005/Atom\"><title
+   type=\"text\">kittens</title><subtitle type=\"text\">Bing Image
+   Search</subtitle><id>https://api.datamarket.azure.com/Data.ashx/Bing/Search/Image?Query='kittens'&amp;$top=1</id><rights
+   type=\"text\" /><updated>2016-04-13T13:57:25Z</updated><link rel=\"next\"
+   href=\"https://api.datamarket.azure.com/Data.ashx/Bing/Search/Image?Query='kittens'&amp;$skip=1&amp;$top=1\"
+   /><entry><id>https://api.datamarket.azure.com/Data.ashx/Bing/Search/Image?Query='kittens'&amp;$skip=0&amp;$top=1</id><title
+   type=\"text\">ImageResult</title><updated>2016-04-13T13:57:25Z</updated><content
+   type=\"application/xml\"><m:properties><d:ID
+   m:type=\"Edm.Guid\">5a82ef4c-7490-4bff-b2c4-ac6a140a333b</d:ID><d:Title
+   m:type=\"Edm.String\">Cute Kittens - Pictures - The Wondrous
+   Pics</d:Title><d:MediaUrl
+   m:type=\"Edm.String\">http://wondrouspics.com/wp-content/uploads/2011/12/Cute_kitten.jpg</d:MediaUrl><d:SourceUrl
+   m:type=\"Edm.String\">http://wondrouspics.com/cute-kittens-pictures/</d:SourceUrl><d:DisplayUrl
+   m:type=\"Edm.String\">wondrouspics.com/cute-kittens-pictures</d:DisplayUrl><d:Width
+   m:type=\"Edm.Int32\">1280</d:Width><d:Height
+   m:type=\"Edm.Int32\">1024</d:Height><d:FileSize
+   m:type=\"Edm.Int64\">203635</d:FileSize><d:ContentType
+   m:type=\"Edm.String\">image/jpeg</d:ContentType><d:Thumbnail
+   m:type=\"Bing.Thumbnail\"><d:MediaUrl
+   m:type=\"Edm.String\">http://ts2.mm.bing.net/th?id=OIP.M9a8352a53a10bdac9dbaca3458e71816H0&amp;pid=15.1</d:MediaUrl><d:ContentType
+   m:type=\"Edm.String\">image/jpg</d:ContentType><d:Width
+   m:type=\"Edm.Int32\">480</d:Width><d:Height
+   m:type=\"Edm.Int32\">384</d:Height><d:FileSize
+   m:type=\"Edm.Int64\">15924</d:FileSize></d:Thumbnail></m:properties></content></entry></feed>",
+   :trace-redirects
+   ["https://api.datamarket.azure.com/Bing/Search/Image?Query=%27kittens%27&$top=1"]}
