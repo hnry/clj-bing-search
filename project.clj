@@ -1,5 +1,5 @@
-(defproject bing-search "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
+(defproject bing-search "0.1.0"
+  :description "bing search api"
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}

@@ -1,5 +1,6 @@
 (ns bing-search.search
   (:require [clj-http.client :as http]
+            [clj-http.util :refer [url-encode]]
             [clojure.data.xml :as xml]
             [clojure.data.json :as json]))
 
@@ -8,6 +9,8 @@
 (defn set-key!
   [k]
   (def bing-key k))
+
+(def not-nil? (complement nil?))
 
 (defn parse-opts
   "convert options to a uri query string fragment"
@@ -19,15 +22,17 @@
 
 
 (defn encode-quotes
-  "wraps argument in encoded single quotes"
-  [arg]
-  (str "%27" arg "%27"))
+  "wraps argument in encoded single quotes and uri encodes it"
+  [{term :term encode :encode}]
+  (let [term (if (= encode false) term (url-encode term))]
+    (str "%27" term "%27")))
 
 (defn parse-body [resp]
-  (let [type ((resp :headers) "Content-Type")
-        r-json (when (re-find #"json" type)
+  (let [hdr (resp :headers)
+        type (when (not-nil? hdr) (hdr "Content-Type"))
+        r-json (when (and (not-nil? type) (re-find #"json" type))
                 (((json/read-str (resp :body)) "d") "results"))
-        r-xml (when (re-find #"xml" type)
+        r-xml (when (and (not-nil? type)(re-find #"xml" type))
                 (xml/parse-str (resp :body)))]
         (or r-json r-xml)))
 
@@ -35,9 +40,10 @@
   "https request to bing api, returns {:result <parsed body> :response <http response map>}"
   ([inf term] (search inf term {}))
   ([inf term opts]
-   (let [params (parse-opts opts)
+   (let [params (parse-opts (dissoc opts :encode))
+         term (encode-quotes {:term term :encode (opts :encode)})
          inf (clojure.string/capitalize (name inf))
-         url (str "https://api.datamarket.azure.com/Bing/Search/" inf "?Query=" (encode-quotes term) params)
+         url (str "https://api.datamarket.azure.com/Bing/Search/" inf "?Query=" term params)
          resp (http/get url
                {:digest-auth ["", bing-key]
                 :throw-exceptions false})]
